@@ -18,63 +18,51 @@ public class ControladorPrincipal {
     }
 
     public boolean guardarPaciente(Paciente paciente) {
-        listaPaciente.add(paciente);
-        return true;
-
+        return listaPaciente.add(paciente);
     }
 
     public boolean agregarReceta(Paciente paciente, Receta receta) {
-        paciente.getRecetas().add(receta);
-        return true;
+        return paciente.getRecetas().add(receta);
     }
 
     public Paciente buscarPaciente(int documento) {
-        for (int i = 0; i < listaPaciente.size(); i++) {
-            if (listaPaciente.get(i).getDocumento() == documento) {
-                return listaPaciente.get(i);
-            }
+        for (Paciente p : listaPaciente) {
+            if (p.getDocumento() == documento) return p;
         }
         return null;
     }
 
-    public Receta recetaPaciente(Paciente paciente) {
-        ArrayList<Receta> aux = paciente.getRecetas();
-        for (int i = 0; i < aux.size(); i++) {
-            return aux.get(i);
-        }
-        return null;
-    }
-
-    public boolean modificarDosis(Paciente paciente, Receta receta) {
-        Receta buscar = recetaPaciente(paciente);
-        if (buscar != null) {
-            receta.setDosis(buscar.getDosis());
-            return true;
-        }
-        return false;
-    }
-
-    public boolean eliminarReceta(Paciente paciente, Receta receta) {
-        for (int i = 0; i < paciente.getRecetas().size(); i++) {
-            if (paciente.getRecetas().get(i).equals(receta)) {
-                paciente.getRecetas().get(i);
+    public boolean modificarDosis(Paciente paciente, Receta receta, int nuevaDosis) {
+        if (nuevaDosis <= 0) return false;
+        for (Receta r : paciente.getRecetas()) {
+            if (r.equals(receta)) {
+                r.setDosis(nuevaDosis);
                 return true;
             }
         }
         return false;
     }
 
+    public boolean eliminarReceta(Paciente paciente, Receta receta) {
+        return paciente.getRecetas().remove(receta);
+    }
+
     public DefaultTableModel listarReceta(Paciente paciente) {
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.setColumnIdentifiers(new String[]{"Nombre", "Medicamento", "Dosis", "Dias"});
-        ArrayList<Receta> aux = paciente.getRecetas();
-        for (int i = 0; i < aux.size(); i++) {
+        modelo.setColumnIdentifiers(new String[]{"Nombre", "Medicamento", "Dosis", "Días"});
+
+        for (Receta r : paciente.getRecetas()) {
             modelo.addRow(new Object[]{
                 paciente.getNombre(),
-                aux.get(i).getMedicamento(),
-                aux.get(i).getDosis(),
-                aux.get(i).getDias()});           
+                r.getMedicamento(),
+                r.getDosis(),
+                r.getDias()
+            });
         }
+
         return modelo;
     }
 }
+
+
+

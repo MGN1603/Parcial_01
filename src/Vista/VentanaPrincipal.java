@@ -45,7 +45,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         panelTitulo.setBackground(new java.awt.Color(153, 153, 153));
 
-        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setBackground(new java.awt.Color(0, 0, 0));
+        lblTitulo.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
         lblTitulo.setText("Recetas Medicas");
 
         javax.swing.GroupLayout panelTituloLayout = new javax.swing.GroupLayout(panelTitulo);
@@ -53,16 +55,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelTituloLayout.setHorizontalGroup(
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTituloLayout.createSequentialGroup()
-                .addGap(311, 311, 311)
+                .addGap(291, 291, 291)
                 .addComponent(lblTitulo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelTituloLayout.setVerticalGroup(
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTituloLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(24, 24, 24)
                 .addComponent(lblTitulo)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         lblIdPaciente.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,7 +96,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablaReceta);
 
         btnRegistrarReceta.setBackground(new java.awt.Color(153, 153, 153));
-        btnRegistrarReceta.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarReceta.setForeground(new java.awt.Color(0, 0, 0));
         btnRegistrarReceta.setText("Registrar Receta");
         btnRegistrarReceta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +105,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnModificarDosis.setBackground(new java.awt.Color(153, 153, 153));
-        btnModificarDosis.setForeground(new java.awt.Color(255, 255, 255));
+        btnModificarDosis.setForeground(new java.awt.Color(0, 0, 0));
         btnModificarDosis.setText("Modificar Dosis");
         btnModificarDosis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +114,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnBuscarReceta.setBackground(new java.awt.Color(153, 153, 153));
-        btnBuscarReceta.setForeground(new java.awt.Color(255, 255, 255));
+        btnBuscarReceta.setForeground(new java.awt.Color(0, 0, 0));
         btnBuscarReceta.setText("Buscar Receta");
         btnBuscarReceta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,8 +123,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         btnEliminarReceta.setBackground(new java.awt.Color(153, 153, 153));
-        btnEliminarReceta.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarReceta.setForeground(new java.awt.Color(0, 0, 0));
         btnEliminarReceta.setText("Eliminar Receta");
+        btnEliminarReceta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarRecetaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelFondoLayout = new javax.swing.GroupLayout(panelFondo);
         panelFondo.setLayout(panelFondoLayout);
@@ -136,31 +143,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelFondoLayout.createSequentialGroup()
-                        .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelFondoLayout.createSequentialGroup()
-                                .addComponent(lblDosis, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDosis, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelFondoLayout.createSequentialGroup()
-                                .addComponent(lblMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelFondoLayout.createSequentialGroup()
-                                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelFondoLayout.createSequentialGroup()
-                                .addComponent(lblIdPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtIdPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelFondoLayout.createSequentialGroup()
-                                .addComponent(lblDias, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41))
-                    .addGroup(panelFondoLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnBuscarReceta, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -169,7 +151,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnModificarDosis, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnEliminarReceta, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelFondoLayout.createSequentialGroup()
+                        .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelFondoLayout.createSequentialGroup()
+                                .addComponent(lblIdPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtIdPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 373, Short.MAX_VALUE))
+                            .addGroup(panelFondoLayout.createSequentialGroup()
+                                .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelFondoLayout.createSequentialGroup()
+                                        .addComponent(lblDosis, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtDosis, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(panelFondoLayout.createSequentialGroup()
+                                        .addComponent(lblMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(panelFondoLayout.createSequentialGroup()
+                                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(panelFondoLayout.createSequentialGroup()
+                                        .addComponent(lblDias, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(41, 41, 41))))
         );
         panelFondoLayout.setVerticalGroup(
             panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,11 +187,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(panelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIdPaciente)
+                    .addComponent(txtIdPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelFondoLayout.createSequentialGroup()
-                        .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblIdPaciente)
-                            .addComponent(txtIdPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNombre)
@@ -198,18 +208,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblDias)
                             .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34))
+                        .addGap(34, 34, 34)
+                        .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnRegistrarReceta)
+                            .addComponent(btnModificarDosis)))
                     .addGroup(panelFondoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)))
-                .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrarReceta)
-                    .addComponent(btnModificarDosis))
+                        .addGap(3, 3, 3)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscarReceta)
                     .addComponent(btnEliminarReceta))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,7 +249,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         String medicamento = txtMedicamento.getText();
         int dosisPaciente = Integer.parseInt(txtDosis.getText());
         int dia = Integer.parseInt(txtDia.getText());
-        Paciente paciente = new Paciente(idPaciente, nombrePaciente);
+        Paciente paciente = controlador.buscarPaciente(idPaciente);
+        if (paciente == null) {
+            paciente = new Paciente(idPaciente, nombrePaciente);
+            controlador.guardarPaciente(paciente);
+        }
         Receta receta = new Receta(medicamento, dosisPaciente, dia);
         boolean guardar = controlador.agregarReceta(paciente, receta);
         if (guardar) {
@@ -252,7 +266,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnModificarDosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarDosisActionPerformed
         // TODO add your handling code here:
+        int documento = Integer.parseInt(txtIdPaciente.getText());
+        Paciente paciente = controlador.buscarPaciente(documento);
+        if (paciente == null) {
+            JOptionPane.showMessageDialog(null, "❌ No se encontró ese paciente.");
+            return;
+        }
 
+        int filaSeleccionada = tablaReceta.getSelectedRow();
+        if (filaSeleccionada == -1) {
+            JOptionPane.showMessageDialog(null, "Selecciona una receta en la tabla.");
+            return;
+        }
+
+        Receta receta = paciente.getRecetas().get(filaSeleccionada);
+        String input = JOptionPane.showInputDialog("Nueva dosis para " + receta.getMedicamento() + ":");
+        int nuevaDosis = Integer.parseInt(input);
+
+        boolean modificado = controlador.modificarDosis(paciente, receta, nuevaDosis);
+        if (modificado) {
+            JOptionPane.showMessageDialog(null, "Dosis modificada.");
+            llenarTabla();
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo modificar la dosis.");
+        }
     }//GEN-LAST:event_btnModificarDosisActionPerformed
 
     private void btnBuscarRecetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRecetaActionPerformed
@@ -265,14 +302,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                               Encontrado: Paciente
                              Documento: """ + buscar.getDocumento() + "\n"
                     + "Nombre: " + buscar.getNombre() + "\n"
-                    + "Documento: " + buscar.getDocumento()+ "\n";
-                    
+                    + "Documento: " + buscar.getDocumento() + "\n";
 
             JOptionPane.showMessageDialog(null, mensaje, "Resultado de búsqueda", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "❌ No se encontró ninguna Propietario con ese N.Documento.", "Error", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnBuscarRecetaActionPerformed
+
+    private void btnEliminarRecetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarRecetaActionPerformed
+        // TODO add your handling code here:
+        int documento = Integer.parseInt(txtIdPaciente.getText());
+        Paciente paciente = controlador.buscarPaciente(documento);
+        if (paciente == null) {
+            JOptionPane.showMessageDialog(null, "No se encontró ese paciente.");
+            return;
+        }
+
+        int filaSeleccionada = tablaReceta.getSelectedRow();
+        if (filaSeleccionada == -1) {
+            JOptionPane.showMessageDialog(null, "Selecciona una receta en la tabla.");
+            return;
+        }
+
+        Receta receta = paciente.getRecetas().get(filaSeleccionada);
+        boolean eliminado = controlador.eliminarReceta(paciente, receta);
+        if (eliminado) {
+            JOptionPane.showMessageDialog(null, "Receta eliminada.");
+            llenarTabla();
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo eliminar la receta.");
+        }
+    }//GEN-LAST:event_btnEliminarRecetaActionPerformed
 
     public void llenarTabla() {
         int documento = Integer.parseInt(txtIdPaciente.getText());
@@ -308,18 +369,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarReceta;
     private javax.swing.JButton btnModificarDosis;
     private javax.swing.JButton btnRegistrarReceta;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDias;
     private javax.swing.JLabel lblDosis;
